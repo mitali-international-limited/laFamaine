@@ -10,7 +10,7 @@ const userRouter = require("./app/routes/User.js");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost: 3000",
+  origin: "http://localhost:3000",
 };
 
 app.use(cors(corsOptions));
