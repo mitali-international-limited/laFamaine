@@ -15,19 +15,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //mongodb config
-mongoose.Promise = global.Promise;
-mongoose
-  .connect(dbConfig.url, {
-    useNewUrlParser: true,
-  })
-  .then(() => {
-    console.log("Database Connected Successfully!!");
-  })
-  .catch((err) => {
-    console.log("Could not connect to the database", err);
-    process.exit();
-  });
 
+//mongo db connection
+async function connect() {
+  try {
+    await mongoose.connect(dbConfig.url);
+    console.log("MongoDb connected");
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+connect();
 // environment variable
 env.config();
 
