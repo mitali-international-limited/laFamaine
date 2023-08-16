@@ -9,11 +9,7 @@ const userRouter = require("./app/routes/User.js");
 
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:3000",
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
