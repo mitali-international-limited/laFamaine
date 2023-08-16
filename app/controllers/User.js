@@ -24,7 +24,6 @@ exports.signup = async (req, res) => {
     });
     const saveUser = await _user.save();
     if (saveUser) {
-      console.log("Save User: ", saveUser);
       const token = jwt.sign({ _id: saveUser._id }, process.env.JWT_SECRET, {
         expiresIn: "52h",
       });
