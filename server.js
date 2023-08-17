@@ -6,6 +6,7 @@ const env = require("dotenv");
 const dbConfig = require("./app/db.config.js");
 
 const userRouter = require("./app/routes/User.js");
+const categoryRouter = require("./app/routes/Category.js");
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.get("/", (req, res) => {
 
 //routes
 app.use("/auth", userRouter);
+app.use("/category", categoryRouter);
 
 //set port, listen for request
 
