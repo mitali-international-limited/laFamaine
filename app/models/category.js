@@ -17,6 +17,9 @@ const schema = new mongoose.Schema({
   parentId: {
     type: String,
   },
+  categoryType: {
+    type: String,
+  },
 });
 
 const category = new mongoose.model("Category", schema);

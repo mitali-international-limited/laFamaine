@@ -7,6 +7,7 @@ const dbConfig = require("./app/db.config.js");
 
 const userRouter = require("./app/routes/User.js");
 const categoryRouter = require("./app/routes/Category.js");
+const productRouter = require("./app/routes/Product.js");
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.get("/", (req, res) => {
 //routes
 app.use("/auth", userRouter);
 app.use("/category", categoryRouter);
+app.use("/product", productRouter);
 
 //set port, listen for request
 

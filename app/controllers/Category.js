@@ -25,7 +25,6 @@ const createCategories = (categories, parentId = null) => {
 
 exports.addCategory = async (req, res, next) => {
   try {
-    console.log("Category Body: ", req.body);
     const categoryObj = {
       categoryName: req.body.categoryName,
       slug: slugify(req.body.categoryName),
@@ -36,6 +35,9 @@ exports.addCategory = async (req, res, next) => {
     }
     if (req.body.parentId) {
       categoryObj.parentId = req.body.parentId;
+    }
+    if (req.body.categoryType) {
+      categoryObj.categoryType = req.body.categoryType;
     }
 
     const cat = new Category(categoryObj);
