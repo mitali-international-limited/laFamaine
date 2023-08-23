@@ -9,9 +9,10 @@ exports.addProduct = async (req, res) => {
 
   try {
     let productPictures = [];
+
     if (req.files.length > 0) {
       productPictures = req.files.map((file) => {
-        return { img: file.filename };
+        return { img: process.env.API + "/public/" + file.filename };
       });
     }
 
